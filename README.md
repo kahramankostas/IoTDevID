@@ -14,7 +14,7 @@ Device identification is one way to secure a network of IoT devices whereby devi
 [ IoT Network Intrusion Dataset* ](https://ocslab.hksecurity.net/Datasets/iot-network-intrusion-dataset)) which together contain data from over 100 devices, two of which include both benign and malicious data. Through our evaluation we demonstrate improved performance over previous results with F1 scores above 99%, with considerable improvement gained from data aggregation.
 
 
-# Implimentation Notes: 
+# Requirements and Infrastructure: 
 
 Python 3.6 was used to create the application files. Before running the files, it must be ensured that [Python 3.6](https://www.python.org/downloads/) and the following libraries are installed.
 
