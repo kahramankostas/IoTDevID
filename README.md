@@ -60,34 +60,34 @@ Each of these steps contains one or more Python files. The same file was saved w
 
 ## Fingerprinting
 
-This step contains the [1.1 PCAP2CSV.ipynb]() file. This file converts the files with pcap extension to single packet-based, csv extension fingerprint files (IoT Sentinel, IoTSense, IoTDevID individual packet based feature sets) and makes labeling.
+This step contains the [1.1 PCAP2CSV.ipynb](https://github.com/kahramankostas/IoTDevID/blob/master/1.1%20PCAP2CSV.ipynb) file. This file converts the files with pcap extension to single packet-based, csv extension fingerprint files (IoT Sentinel, IoTSense, IoTDevID individual packet based feature sets) and makes labeling.
 
 
 ## Initial Fingerprint Method Evaluation
 
-This step contains the [2.1 Classification of Individual packets for Aalto University Dataset]() file. This file makes machine learning application for individual packets for Aalto University and  allows to compare 3 different featuresets (IoT Sentinel, IoTSense, IoTDevID individual packet based feature sets). It uses these algorithms: RF (Random Forest), NB (Naïve Bayes), kNN (k-Nearest Neighbours), GB (Gradient Boosting), DT (Decision Trees), and SVM (Support Vector Machine)
+This step contains the [2.1 Classification of Individual packets for Aalto University Dataset](https://github.com/kahramankostas/IoTDevID/blob/master/2.1%20Classification%20of%20Individual%20packets%20for%20Aalto%20University%20Dataset.ipynb) file. This file makes machine learning application for individual packets for Aalto University and  allows to compare 3 different featuresets (IoT Sentinel, IoTSense, IoTDevID individual packet based feature sets). It uses these algorithms: RF (Random Forest), NB (Naïve Bayes), kNN (k-Nearest Neighbours), GB (Gradient Boosting), DT (Decision Trees), and SVM (Support Vector Machine)
 
 ## Data Augmentation
-This step contains the [3.1 Data Augmentation.ipynb]() file. This file first divides the  datasets into two as train and test. It then applies data augmentation for the required classes using resampling and SMOTE methods.
+This step contains the [3.1 Data Augmentation.ipynb](https://github.com/kahramankostas/IoTDevID/blob/master/3.1%20Data%20Augmentation.ipynb) file. This file first divides the  datasets into two as train and test. It then applies data augmentation for the required classes using resampling and SMOTE methods.
 
 
 ## Augmentated and Aggregated Fingerprint Method Evaluation
 This step contains these 4  files:
 
-[4.1 Aalto university results  with augmentation and aggregation.ipynb]() file makes machine learning (RF) application for augmented version of Aalto University dataset based individual packet level using IoTDevID method. It then produces results for 4 different group sizes (3, 6, 9, 12) using the packet aggregation method.
+[4.1 Aalto university results  with augmentation and aggregation.ipynb](https://github.com/kahramankostas/IoTDevID/blob/master/4.1%20Aalto%20university%20results%20%20with%20augmentation%20and%20aggregation.ipynb) file makes machine learning (RF) application for augmented version of Aalto University dataset based individual packet level using IoTDevID method. It then produces results for 4 different group sizes (3, 6, 9, 12) using the packet aggregation method.
 
-[4.2 IoTfinder results  with augmentation and aggregation]() file makes machine learning (RF) application for augmented version of IoTfinder dataset based individual packet level using IoTDevID method. It then produces results for 4 different group sizes (3, 6, 9, 12) using the packet aggregation method.
-
-
-[4.3 UNSW_benign_ results  with augmentation and aggregation]() file makes machine learning (RF) application for augmented version of UNSW-Sydney IEEE TMC dataset based individual packet level using IoTDevID method. It then produces results for 4 different group sizes (3, 6, 9, 12) using the packet aggregation method.
+[4.2 IoTfinder results  with augmentation and aggregation](https://github.com/kahramankostas/IoTDevID/blob/master/4.2%20IoTfinder%20results%20%20with%20augmentation%20and%20aggregation.ipynb) file makes machine learning (RF) application for augmented version of IoTfinder dataset based individual packet level using IoTDevID method. It then produces results for 4 different group sizes (3, 6, 9, 12) using the packet aggregation method.
 
 
-[4.4 Aalto university results  with combined labels.ipynb]() file makes machine learning (RF) application for augmented version of Aalto University dataset based individual packet level using IoTDevID method. It then produces results for 4 different group sizes (3, 6, 9, 12) using the packet aggregation method. However, in this file, very similar devices are considered as a group in the Aalto University dataset and collected under the same label.
+[4.3 UNSW_benign_ results  with augmentation and aggregation](https://github.com/kahramankostas/IoTDevID/blob/master/4.3%20UNSW_benign_%20results%20%20with%20augmentation%20and%20aggregation.ipynb) file makes machine learning (RF) application for augmented version of UNSW-Sydney IEEE TMC dataset based individual packet level using IoTDevID method. It then produces results for 4 different group sizes (3, 6, 9, 12) using the packet aggregation method.
+
+
+[4.4 Aalto university results  with combined labels.ipynb](https://github.com/kahramankostas/IoTDevID/blob/master/4.4%20Aalto%20university%20results%20%20with%20combined%20labels.ipynb) file makes machine learning (RF) application for augmented version of Aalto University dataset based individual packet level using IoTDevID method. It then produces results for 4 different group sizes (3, 6, 9, 12) using the packet aggregation method. However, in this file, very similar devices are considered as a group in the Aalto University dataset and collected under the same label.
 
 
 
 ## Malicious Device Dataset Evaluation*
-This step contains the [5.1 UNSW_Malicious_ results  with augmentation and aggregation]() file. This file makes machine learning (RF) application for  [ UNSW-Sydney ACM SOSR](https://iotanalytics.unsw.edu.au/attack-data) and  [ IoT Network Intrusion ](https://ocslab.hksecurity.net/Datasets/iot-network-intrusion-dataset)datasets based individual packet level using IoTDevID method. It then produces results for 4 different group sizes (3, 6, 9, 12) using the packet aggregation method. However, unlike other steps, this step contains benign and malicious data produced by the same devices. The purpose is not to prevent these attacks, but to show that the device can be detected if it behaves differently. Therefore, not all data of malicious datasets are used. The data used includes only cases where IoT devices are attacker. 
+This step contains the [5.1 UNSW_Malicious_ results  with augmentation and aggregation](https://github.com/kahramankostas/IoTDevID/blob/master/5.1%20UNSW_Malicious_%20results%20%20with%20augmentation%20and%20aggregation.ipynb) file. This file makes machine learning (RF) application for  [ UNSW-Sydney ACM SOSR](https://iotanalytics.unsw.edu.au/attack-data) and  [ IoT Network Intrusion ](https://ocslab.hksecurity.net/Datasets/iot-network-intrusion-dataset)datasets based individual packet level using IoTDevID method. It then produces results for 4 different group sizes (3, 6, 9, 12) using the packet aggregation method. However, unlike other steps, this step contains benign and malicious data produced by the same devices. The purpose is not to prevent these attacks, but to show that the device can be detected if it behaves differently. Therefore, not all data of malicious datasets are used. The data used includes only cases where IoT devices are attacker. 
 Before creating the fingerprint for this process, we parsed the pcap files as benign and malicious, and then extracted the fingerprints. The information required for the filtering process are clearly stated on the datasets website. You can perform these operations using [Wireshark](https://www.wireshark.org/). You can also use [tshark-filter](https://github.com/kahramankostas/tshark-filter) to automate this process.
 
 
