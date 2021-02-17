@@ -1,10 +1,12 @@
 
 # coding: utf-8
 
-# ## This file makes machine learning application for aggregation packets for UNSW ACM SOSR 2019 Attack & Benign Dataset with 4 diffirent group size (3, 6, 9, 12)
-# 
-# 
+# ## This file makes machine learning application for aggregation packets for Aalto University dataset with 4 diffirent group size (3, 6, 9, 12)
 # ### Used machine learning algorithms: RF (Random Forest)
+
+# ----------
+
+# ###  importing relevant libraries
 
 # In[2]:
 
@@ -46,18 +48,16 @@ from sklearn.metrics import classification_report
 
 
 
-# -------------
+# ### train and test datasets
 
-# ###  importing relevant libraries
-
-# In[3]:
+# In[14]:
 
 
-loop="UNSW_Malicious_h_train_sk.csv"
-loop2="UNSW_Malicious_h_test_sk.csv"
+loop="aalto_h_test_sk.csv"
+loop2="aalto_h_test_sk.csv"
 
 
-# In[5]:
+# In[16]:
 
 
 df = pd.read_csv(loop)
@@ -66,7 +66,7 @@ df
 
 # ### Discovering Labels
 
-# In[7]:
+# In[18]:
 
 
 def target_names():
@@ -80,7 +80,7 @@ target_names
 
 # ### Hyperparameters of machine learning algorithm.
 
-# In[9]:
+# In[3]:
 
 
 ml_list={"Random Forest R":RandomForestClassifier(bootstrap=True, class_weight=None, criterion='entropy',
@@ -90,12 +90,11 @@ ml_list={"Random Forest R":RandomForestClassifier(bootstrap=True, class_weight=N
                        min_weight_fraction_leaf=0.0, n_estimators=69,
                        n_jobs=None, oob_score=False, random_state=None,
                        verbose=0, warm_start=False)}
-                          
 
 
 # # Aggregation Algorithm
 
-# In[9]:
+# In[21]:
 
 
 altime=0
@@ -141,7 +140,7 @@ def merged(mac,y_test,predict):
 
 # ## Calculation of evaluations
 
-# In[10]:
+# In[22]:
 
 
 def score(altime,train_time,test_time,predict,y_test,class_based_results):
@@ -181,13 +180,9 @@ def score(altime,train_time,test_time,predict,y_test,class_based_results):
 
 # # Machine learning applications (100 repetitions)
 
-# In[10]:
+# ## GROUP SIZE 1 (= individual packets)
 
-
-## GROUP SIZE 1 (= individual packets)
-
-
-# In[12]:
+# In[24]:
 
 
 ths = open("1_08_2020_normal.csv", "w")
@@ -280,7 +275,7 @@ ths.close()
 
 # ## GROUP SIZE 12
 
-# In[13]:
+# In[25]:
 
 
 ths = open("1_08_2020_merged_12.csv", "w")
@@ -378,7 +373,7 @@ ths.close()
 
 # ## GROUP SIZE 9
 
-# In[14]:
+# In[26]:
 
 
 def merged(mac,y_test,predict):
@@ -413,7 +408,7 @@ def merged(mac,y_test,predict):
     return new_y,time.time()-second
 
 
-# In[15]:
+# In[27]:
 
 
 ths = open("1_08_2020_merged_9.csv", "w")
@@ -511,7 +506,7 @@ ths.close()
 
 # ## GROUP SIZE 6
 
-# In[16]:
+# In[28]:
 
 
 def merged(mac,y_test,predict):
@@ -546,7 +541,7 @@ def merged(mac,y_test,predict):
     return new_y,time.time()-second
 
 
-# In[17]:
+# In[29]:
 
 
 ths = open("1_08_2020_merged_6.csv", "w")
@@ -644,7 +639,7 @@ ths.close()
 
 # ## GROUP SIZE 3
 
-# In[18]:
+# In[30]:
 
 
 def merged(mac,y_test,predict):
@@ -679,7 +674,7 @@ def merged(mac,y_test,predict):
     return new_y,time.time()-second
 
 
-# In[19]:
+# In[31]:
 
 
 ths = open("1_08_2020_merged_3.csv", "w")

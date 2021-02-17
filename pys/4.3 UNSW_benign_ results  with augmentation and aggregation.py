@@ -1,12 +1,14 @@
 
 # coding: utf-8
 
-# ## This file makes machine learning application for aggregation packets for UNSW ACM SOSR 2019 Attack & Benign Dataset with 4 diffirent group size (3, 6, 9, 12)
-# 
-# 
+# ## This file makes machine learning application for aggregation packets for UNSW IEEE TMC 2018  dataset with 4 diffirent group size (3, 6, 9, 12)
 # ### Used machine learning algorithms: RF (Random Forest)
 
-# In[2]:
+# -------------
+
+# ###  importing relevant libraries
+
+# In[1]:
 
 
 get_ipython().run_line_magic('matplotlib', 'inline')
@@ -46,18 +48,16 @@ from sklearn.metrics import classification_report
 
 
 
-# -------------
+# ### train and test datasets
 
-# ###  importing relevant libraries
-
-# In[3]:
+# In[4]:
 
 
-loop="UNSW_Malicious_h_train_sk.csv"
-loop2="UNSW_Malicious_h_test_sk.csv"
+loop="UNSW_benign_h_train_sk.csv"
+loop2="UNSW_benign_h_test_sk.csv"
 
 
-# In[5]:
+# In[4]:
 
 
 df = pd.read_csv(loop)
@@ -66,7 +66,7 @@ df
 
 # ### Discovering Labels
 
-# In[7]:
+# In[6]:
 
 
 def target_names():
@@ -80,7 +80,7 @@ target_names
 
 # ### Hyperparameters of machine learning algorithm.
 
-# In[9]:
+# In[2]:
 
 
 ml_list={"Random Forest R":RandomForestClassifier(bootstrap=True, class_weight=None, criterion='entropy',
@@ -90,7 +90,6 @@ ml_list={"Random Forest R":RandomForestClassifier(bootstrap=True, class_weight=N
                        min_weight_fraction_leaf=0.0, n_estimators=69,
                        n_jobs=None, oob_score=False, random_state=None,
                        verbose=0, warm_start=False)}
-                          
 
 
 # # Aggregation Algorithm
@@ -181,11 +180,7 @@ def score(altime,train_time,test_time,predict,y_test,class_based_results):
 
 # # Machine learning applications (100 repetitions)
 
-# In[10]:
-
-
-## GROUP SIZE 1 (= individual packets)
-
+# ## GROUP SIZE 1 (= individual packets)
 
 # In[12]:
 

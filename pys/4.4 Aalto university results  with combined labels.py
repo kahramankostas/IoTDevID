@@ -1,12 +1,15 @@
 
 # coding: utf-8
 
-# ## This file makes machine learning application for aggregation packets for UNSW ACM SOSR 2019 Attack & Benign Dataset with 4 diffirent group size (3, 6, 9, 12)
-# 
-# 
+# ## This file makes machine learning application for aggregation packets for Aalto University dataset with 4 diffirent group size (3, 6, 9, 12)
+# ## In this file, very similar devices are considered as a group in the Aalto University dataset and collected under the same label.
 # ### Used machine learning algorithms: RF (Random Forest)
 
-# In[2]:
+# ----------
+
+# ###  importing relevant libraries
+
+# In[9]:
 
 
 get_ipython().run_line_magic('matplotlib', 'inline')
@@ -45,19 +48,16 @@ from sklearn.metrics import classification_report
 
 
 
+# ### train and test datasets
 
-# -------------
-
-# ###  importing relevant libraries
-
-# In[3]:
+# In[10]:
 
 
-loop="UNSW_Malicious_h_train_sk.csv"
-loop2="UNSW_Malicious_h_test_sk.csv"
+loop="Aalto__Dataset "
+loop2="Aalto__Dataset "
 
 
-# In[5]:
+# In[11]:
 
 
 df = pd.read_csv(loop)
@@ -66,7 +66,7 @@ df
 
 # ### Discovering Labels
 
-# In[7]:
+# In[12]:
 
 
 def target_names():
@@ -78,9 +78,35 @@ target_names=target_names()
 target_names
 
 
+#  # new label groups for Aalto dataset
+
+# In[13]:
+
+
+new_labels={ 'D-LinkSensor':"D-Sensors",
+ 'D-LinkSiren':"D-Sensors",
+ 'D-LinkSwitch':"D-Sensors",
+ 'D-LinkWaterSensor':"D-Sensors",
+ 'EdimaxPlug1101W':"EdimaxPlug",
+ 'EdimaxPlug2101W':"EdimaxPlug",
+ 'SmarterCoffee':"smart_Kettle",
+ 'TP-LinkPlugHS100':"TP-LinkPlugHS",
+ 'TP-LinkPlugHS110':"TP-LinkPlugHS",
+ 'iKettle2':"smart_Kettle"}
+
+def target_names():
+    name=loop
+    df = pd.read_csv(name)
+    df=df.replace({"Label": new_labels})
+    target_names=sorted(list(df[df.columns[-2]].unique()))
+    return target_names
+target_names=target_names()
+target_names
+
+
 # ### Hyperparameters of machine learning algorithm.
 
-# In[9]:
+# In[14]:
 
 
 ml_list={"Random Forest R":RandomForestClassifier(bootstrap=True, class_weight=None, criterion='entropy',
@@ -90,12 +116,11 @@ ml_list={"Random Forest R":RandomForestClassifier(bootstrap=True, class_weight=N
                        min_weight_fraction_leaf=0.0, n_estimators=69,
                        n_jobs=None, oob_score=False, random_state=None,
                        verbose=0, warm_start=False)}
-                          
 
 
 # # Aggregation Algorithm
 
-# In[9]:
+# In[15]:
 
 
 altime=0
@@ -141,7 +166,7 @@ def merged(mac,y_test,predict):
 
 # ## Calculation of evaluations
 
-# In[10]:
+# In[16]:
 
 
 def score(altime,train_time,test_time,predict,y_test,class_based_results):
@@ -181,13 +206,9 @@ def score(altime,train_time,test_time,predict,y_test,class_based_results):
 
 # # Machine learning applications (100 repetitions)
 
-# In[10]:
+# ## GROUP SIZE 1 (= individual packets)
 
-
-## GROUP SIZE 1 (= individual packets)
-
-
-# In[12]:
+# In[17]:
 
 
 ths = open("1_08_2020_normal.csv", "w")
@@ -209,6 +230,7 @@ for ii in ml_list:
 
         #TRAIN
         df = pd.read_csv(loop)
+        df=df.replace({"Label": new_labels})
         m_train=df["Mac"]
         del df["Mac"]
         X_train =df[df.columns[0:-1]]
@@ -218,6 +240,7 @@ for ii in ml_list:
 
         #TEST
         df = pd.read_csv(loop2)#,header=None )
+        df=df.replace({"Label": new_labels})
         m_test=df["Mac"]
         del df["Mac"]
         X_test =df[df.columns[0:-1]]
@@ -280,7 +303,7 @@ ths.close()
 
 # ## GROUP SIZE 12
 
-# In[13]:
+# In[18]:
 
 
 ths = open("1_08_2020_merged_12.csv", "w")
@@ -302,6 +325,7 @@ for ii in ml_list:
 
         #TRAIN
         df = pd.read_csv(loop)
+        df=df.replace({"Label": new_labels})
         m_train=df["Mac"]
         del df["Mac"]
         X_train =df[df.columns[0:-1]]
@@ -311,6 +335,7 @@ for ii in ml_list:
 
         #TEST
         df = pd.read_csv(loop2)#,header=None )
+        df=df.replace({"Label": new_labels})
         m_test=df["Mac"]
         del df["Mac"]
         X_test =df[df.columns[0:-1]]
@@ -378,7 +403,7 @@ ths.close()
 
 # ## GROUP SIZE 9
 
-# In[14]:
+# In[19]:
 
 
 def merged(mac,y_test,predict):
@@ -413,7 +438,7 @@ def merged(mac,y_test,predict):
     return new_y,time.time()-second
 
 
-# In[15]:
+# In[20]:
 
 
 ths = open("1_08_2020_merged_9.csv", "w")
@@ -435,6 +460,7 @@ for ii in ml_list:
 
         #TRAIN
         df = pd.read_csv(loop)
+        df=df.replace({"Label": new_labels})
         m_train=df["Mac"]
         del df["Mac"]
         X_train =df[df.columns[0:-1]]
@@ -444,6 +470,7 @@ for ii in ml_list:
 
         #TEST
         df = pd.read_csv(loop2)#,header=None )
+        df=df.replace({"Label": new_labels})
         m_test=df["Mac"]
         del df["Mac"]
         X_test =df[df.columns[0:-1]]
@@ -511,7 +538,7 @@ ths.close()
 
 # ## GROUP SIZE 6
 
-# In[16]:
+# In[21]:
 
 
 def merged(mac,y_test,predict):
@@ -546,7 +573,7 @@ def merged(mac,y_test,predict):
     return new_y,time.time()-second
 
 
-# In[17]:
+# In[22]:
 
 
 ths = open("1_08_2020_merged_6.csv", "w")
@@ -568,6 +595,7 @@ for ii in ml_list:
 
         #TRAIN
         df = pd.read_csv(loop)
+        df=df.replace({"Label": new_labels})
         m_train=df["Mac"]
         del df["Mac"]
         X_train =df[df.columns[0:-1]]
@@ -577,6 +605,7 @@ for ii in ml_list:
 
         #TEST
         df = pd.read_csv(loop2)#,header=None )
+        df=df.replace({"Label": new_labels})
         m_test=df["Mac"]
         del df["Mac"]
         X_test =df[df.columns[0:-1]]
@@ -644,7 +673,7 @@ ths.close()
 
 # ## GROUP SIZE 3
 
-# In[18]:
+# In[23]:
 
 
 def merged(mac,y_test,predict):
@@ -679,7 +708,7 @@ def merged(mac,y_test,predict):
     return new_y,time.time()-second
 
 
-# In[19]:
+# In[24]:
 
 
 ths = open("1_08_2020_merged_3.csv", "w")
@@ -701,6 +730,7 @@ for ii in ml_list:
 
         #TRAIN
         df = pd.read_csv(loop)
+        df=df.replace({"Label": new_labels})
         m_train=df["Mac"]
         del df["Mac"]
         X_train =df[df.columns[0:-1]]
@@ -710,6 +740,7 @@ for ii in ml_list:
 
         #TEST
         df = pd.read_csv(loop2)#,header=None )
+        df=df.replace({"Label": new_labels})
         m_test=df["Mac"]
         del df["Mac"]
         X_test =df[df.columns[0:-1]]
