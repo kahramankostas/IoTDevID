@@ -3,7 +3,8 @@
 # Overview
 In this repository you will find a Python implementation of IoTDevID; a fingerprinting method for device identification.
 
-*cite*
+*Kahraman  Kostas,  Mike  Just,  and  Michael  A.  Lones.   IoTDevID:  A  behaviour-based  fingerprintingmethod for device identification in the IoT,arXiv preprint, arxiv:2102.08866, 2021.*
+
 # What is IoTDevID?
 
 
@@ -114,11 +115,28 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 # Citations
 If you use the source code please cite the following paper:
 
-*cite*
+*Kahraman  Kostas,  Mike  Just,  and  Michael  A.  Lones.   IoTDevID:  A  behaviour-based  fingerprintingmethod for device identification in the IoT,arXiv preprint, arxiv:2102.08866, 2021.*
+
+
+```
+@misc{kostas2021iotdevid,
+      title={IoTDevID: A Behaviour-Based Fingerprinting Method for Device Identification in the IoT}, 
+      author={Kahraman Kostas and Mike Just and Michael A. Lones},
+      year={2021},
+      eprint={2102.08866},
+      archivePrefix={arXiv},
+      primaryClass={cs.CR}
+}
+```
+
+
+
+
+
 
 Kahraman Kostas
 kkostas@utexas.edu
 
-## ____________________________________
+## ______________________________________________________________________________________________________________________
 
 *Items with the * sign are not included in the paper. They have been prepared for a longer version of it.
