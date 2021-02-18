@@ -38,7 +38,7 @@ The technical features of the computer used for experiments are given below.
 | Operating System	|:|	Windows 10 Pro 64-bit |
 | Graphics Processing Unit	|:|	AMD Readon (TM) 530|
 
-# Implimentation: 
+# Implementation: 
 
 The implementation phase consists of 5 steps, which are:
 
