@@ -120,7 +120,7 @@ If you use the source code please cite the following paper:
 
 ```
 @misc{kostas2021iotdevid,
-      title={IoTDevID: A Behaviour-Based Fingerprinting Method for Device Identification in the IoT}, 
+      title={{IoTDevID}: A Behaviour-Based Fingerprinting Method for Device Identification in the {IoT}}, 
       author={Kahraman Kostas and Mike Just and Michael A. Lones},
       year={2021},
       eprint={2102.08866},
@@ -137,6 +137,6 @@ If you use the source code please cite the following paper:
 Kahraman Kostas
 kkostas@utexas.edu
 
-## ______________________________________________________________________________________________________________________
+## ______________________________________________________________________________________
 
 *Items with the * sign are not included in the paper. They have been prepared for a longer version of it.
