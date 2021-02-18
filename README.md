@@ -133,9 +133,9 @@ If you use the source code please cite the following paper:
 
 
 
-
-Kahraman Kostas
-kkostas@utexas.edu
+Contact:
+*Kahraman Kostas
+kkostas@utexas.edu*
 
 ## _____________________________________________________
 
