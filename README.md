@@ -137,6 +137,6 @@ If you use the source code please cite the following paper:
 Kahraman Kostas
 kkostas@utexas.edu
 
-## ______________________________________________________________________________________
+## _____________________________________________________
 
 *Items with the * sign are not included in the paper. They have been prepared for a longer version of it.
