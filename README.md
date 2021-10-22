@@ -5,7 +5,7 @@ In this repository you will find a Python implementation of IoTDevID; a fingerpr
 
 [*Kahraman  Kostas,  Mike  Just,  and  Michael  A.  Lones.   IoTDevID:  A  behaviour-based  fingerprintingmethod for device identification in the IoT, arXiv preprint, arxiv:2102.08866v1, 2021.*](https://arxiv.org/abs/2102.08866v1)
 
-This is the first version of IoTDevID . It is highly recommended that you check out [the second](https://github.com/kahramankostas/IoTDevIDv2) version as well.
+This is the first version of IoTDevID . It is highly recommended that you check out [the second version](https://github.com/kahramankostas/IoTDevIDv2) as well.
 
 # What is IoTDevID?
 
