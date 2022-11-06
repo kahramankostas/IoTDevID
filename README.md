@@ -140,7 +140,7 @@ If you use the source code please cite the following paper:
 
 Contact:
 *Kahraman Kostas
-kkostas@utexas.edu*
+kahramankostas@gmail.com*
 
 ## _____________________________________________________
 
